@@ -16,16 +16,32 @@ public class CurrentLocationActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		
+		// TODO
 		// Obtain LocationManager service and set up location update request.
-		// To Do
+		
 	}
 
 	
 	// Retrieve location updates through LocationListener interface
 	private final LocationListener locationListener = new LocationListener(){
-	// To Do: override the four methods.
-	}	
+	// TODO: override the four methods.
+		public void onLocationChanged (Location location) {
+			//TODO
+		}
+		
+		public void onProviderDisabled (String provider) {
+			//TODO
+		}
+		
+		public void onProviderEnabled (String provider) {
+			//TODO
+		}
+		
+		public void onStatusChanged (String provider, int status, Bundle extras) {
+			//TODO
+		}
+		
+	};	
 
 	
 	@Override
