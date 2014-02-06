@@ -18,6 +18,9 @@ public class CurrentLocationActivity extends Activity {
 		
 		// TODO
 		// Obtain LocationManager service and set up location update request.
+		LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, locationListener);
+		
 		
 	}
 
@@ -27,6 +30,16 @@ public class CurrentLocationActivity extends Activity {
 	// TODO: override the four methods.
 		public void onLocationChanged (Location location) {
 			//TODO
+			TextView tv = (TextView) findViewById(R.id.myLocationText);
+			if(location != null){
+				double lat = location.getLatitude();
+				double lng = location.getLongitude();
+		
+				tv.setText("Latitude: " + lat + "\nLongitude: " + lng);
+						
+			}else{
+				tv.setText("NO LOCATION INFO");
+			}
 		}
 		
 		public void onProviderDisabled (String provider) {
